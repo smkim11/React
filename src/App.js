@@ -13,7 +13,7 @@ export default function App() {
         <BrowserRouter>
             <div>
                 {/* header */}
-                <h1 style={{color:'orange'}}>Sakila Project</h1>
+                <h1 className='text-yellow-500'>Sakila Project</h1>
                 {/* a태그를 사용하면 페이지 전체가 변경된다. */}
                 {/* Link태그를 사용하여 Routes부분만 변경되도록 - SPA */}
                 <ul>
@@ -31,6 +31,7 @@ export default function App() {
                 <Routes>
                     <Route path="/" element={<Home/>}></Route> {/* 라우터 -> 컴포넌트 */}
                     <Route path="/Country" element={<Country/>}></Route>
+                    <Route path="/CountryOne/:countryId" element={<Country/>}></Route>
                     <Route path="/City" element={<City/>}/>
                     <Route path="/Address" element={<Address/>} />
                     <Route path="/Store" element={<Store/>}/>
