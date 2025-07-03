@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom";
 
 export default function City() {
   const [cityList, setCityList] = useState([]);
@@ -23,7 +24,7 @@ export default function City() {
               cityList.map((ct)=>(
                 <tr key={ct.cityId}>
                     <td>{ct.cityId}</td>
-                    <td>{ct.city}</td>
+                    <td><Link to={'/CityOne/'+ct.cityId}>{ct.city}</Link></td>
                 </tr>
               ))
             }

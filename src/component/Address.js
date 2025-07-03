@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom";
 
 export default function Address() {
   const [addressList, setAddressList] = useState([]);
   const [pageNumber, setPageNumber] = useState(1);
   const [totalPage, setTotalPage] = useState([]);
-
+  
   useEffect(()=>{
     fetch("http://localhost/addressList/"+pageNumber)
     .then((res)=>(res.json()))
@@ -23,7 +24,7 @@ export default function Address() {
               addressList.map((ad)=>(
                 <tr key={ad.addressId}>
                     <td>{ad.addressId}</td>
-                    <td>{ad.address}</td>
+                    <td><Link to={'/AddressOne/'+ad.addressId}>{ad.address}</Link></td>
                 </tr>
               ))
             }

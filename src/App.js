@@ -5,6 +5,14 @@ import Address from './component/Address';
 import City from './component/City';
 import Customer from './component/Customer';
 import Store from './component/Store';
+import CountryOne from './component/CountryOne';
+import AddCountry from './component/AddCountry';
+import AddCity from './component/AddCity';
+import CityOne from './component/CityOne';
+import AddressOne from './component/AddressOne';
+import CustomerOne from './component/CustomerOne';
+import AddAddress from './component/AddAddress';
+import AddCustomer from './component/AddCustomer';
 
 export default function App() {
 
@@ -30,12 +38,25 @@ export default function App() {
                 {/*content---------------------------주석----------------------------*/}
                 <Routes>
                     <Route path="/" element={<Home/>}></Route> {/* 라우터 -> 컴포넌트 */}
+
+                    {/* country crud */}
                     <Route path="/Country" element={<Country/>}></Route>
-                    <Route path="/CountryOne/:countryId" element={<Country/>}></Route>
+                    <Route path="/AddCountry" element={<AddCountry/>}></Route>
+                    <Route path="/CountryOne/:countryId" element={<CountryOne/>}></Route>
+                    {/* city crud */}
                     <Route path="/City" element={<City/>}/>
+                    <Route path="/AddCity/:countryId" element={<AddCity/>}></Route>
+                    <Route path="/CityOne/:cityId" element={<CityOne/>}></Route>
+                    {/* address crud */}
                     <Route path="/Address" element={<Address/>} />
-                    <Route path="/Store" element={<Store/>}/>
+                    <Route path="/AddAddress/:cityId" element={<AddAddress/>}></Route>
+                    <Route path="/AddressOne/:addressId" element={<AddressOne/>}></Route>
+                    {/* customer crud */}
                     <Route path="/Customer" element={<Customer/>}/>
+                    <Route path="/AddCustomer/:addressId" element={<AddCustomer/>}></Route>
+                    <Route path="/CustomerOne/:customerId" element={<CustomerOne/>}></Route>
+                    
+                    <Route path="/Store" element={<Store/>}/>
                 </Routes>
 
 

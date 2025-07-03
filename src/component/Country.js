@@ -17,7 +17,7 @@ export default function Country() {
     return (
         <div>
             <h1>Country(currentPage:{pageNumber})</h1>
-            
+            <Link to="/AddCountry">추가</Link>
             <table border="1">
                 <tr>
                     <th>countryId</th>
@@ -27,7 +27,7 @@ export default function Country() {
                     countryList.map((c)=>(
                         <tr key={c.countryId}>
                             <td>{c.countryId}</td>
-                            <td><Link to="/CountryOne/{c.countryId}">{c.country}</Link></td>
+                            <td><Link to={'/CountryOne/'+c.countryId}>{c.country}</Link></td>
                         </tr>
                     ))
                 }
