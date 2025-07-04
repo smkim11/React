@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 export default function CustomerOne() {
     const {customerId} = useParams();
@@ -7,13 +7,29 @@ export default function CustomerOne() {
     const [address, setAddress] = useState({});
     const [city,setCity] = useState({});
     const [country, setCountry] = useState({});
+    const nav = useNavigate();
 
     useEffect(()=>{
         fetch('http://localhost/customerOne/'+customerId)
         .then((res)=>(res.json()))
         .then((data)=>{setCustomer(data); setAddress(data.addressEntity); 
             setCity(data.addressEntity.cityEntity); setCountry(data.addressEntity.cityEntity.countryEntity)})
-    });
+    },[customerId]);
+
+    function remove(){
+        if(window.confirm('삭제하시겠습니까?')){
+            fetch('http://localhost/deleteCustomer/'+customerId,{method:"DELETE"})
+            .then((res)=>{
+                if(res.ok){
+                    nav('/Customer');
+                }else{
+                    alert('삭제실패')
+                }
+            })
+        }else{
+            alert('삭제취소')
+        }
+    }
     return (
         <div>
             <h1>CustomerOne</h1>
@@ -51,6 +67,8 @@ export default function CustomerOne() {
                     <td>{customer.lastUpdate}</td>
                 </tr>
             </table>
+            <button onClick={remove}>삭제</button>
+            <button onClick={()=>nav('/EditCustomer/'+customerId)}>수정</button>
         </div>
     )
 }

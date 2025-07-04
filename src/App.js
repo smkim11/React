@@ -13,6 +13,10 @@ import AddressOne from './component/AddressOne';
 import CustomerOne from './component/CustomerOne';
 import AddAddress from './component/AddAddress';
 import AddCustomer from './component/AddCustomer';
+import EditCountry from './component/EditCountry';
+import EditCity from './component/EditCity';
+import EditAddress from './component/EditAddress';
+import EditCustomer from './component/EditCustomer';
 
 export default function App() {
 
@@ -43,18 +47,22 @@ export default function App() {
                     <Route path="/Country" element={<Country/>}></Route>
                     <Route path="/AddCountry" element={<AddCountry/>}></Route>
                     <Route path="/CountryOne/:countryId" element={<CountryOne/>}></Route>
+                    <Route path="/EditCountry/:countryId" element={<EditCountry/>}/>
                     {/* city crud */}
                     <Route path="/City" element={<City/>}/>
                     <Route path="/AddCity/:countryId" element={<AddCity/>}></Route>
                     <Route path="/CityOne/:cityId" element={<CityOne/>}></Route>
+                    <Route path="/EditCity/:cityId" element={<EditCity/>}/>
                     {/* address crud */}
                     <Route path="/Address" element={<Address/>} />
                     <Route path="/AddAddress/:cityId" element={<AddAddress/>}></Route>
                     <Route path="/AddressOne/:addressId" element={<AddressOne/>}></Route>
+                    <Route path="/EditAddress/:addressId" element={<EditAddress/>}/>
                     {/* customer crud */}
                     <Route path="/Customer" element={<Customer/>}/>
                     <Route path="/AddCustomer/:addressId" element={<AddCustomer/>}></Route>
                     <Route path="/CustomerOne/:customerId" element={<CustomerOne/>}></Route>
+                    <Route path="/EditCustomer/:customerId" element={<EditCustomer/>}/>
                     
                     <Route path="/Store" element={<Store/>}/>
                 </Routes>
