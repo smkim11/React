@@ -36,44 +36,48 @@ export default function EditCustomer() {
         <div>
             <h1>EditCustomer</h1>
             <table>
+                {/*
                 <tr>
+                    
                     <th>storeId</th>
                     <td>
                         {
-                            customer.storeId === 1 ?
+                            store.storeId === 1 ?
                             <span>
-                                <input type="radio" name="storeId" value="1" checked 
-                                                    onChange={(e)=>setCustomer({
-                                                        storeId:e.target.value,firstName : customer.firstName, lastName : customer.lastName,
+                                <input type="radio" name="storeId" value={1} checked={"checked"}
+                                                    onChange={(e)=>{setCustomer({
+                                                        firstName : customer.firstName, lastName : customer.lastName,
                                                         email:customer.email, active:customer.active, addressId:address.addressId,
                                                         customerId: customer.customerId
-                                                        })}/>1
-                                <input type="radio" name="storeId" value="2" 
-                                                    onChange={(e)=>setCustomer({
-                                                        storeId:e.target.value,firstName : customer.firstName, lastName : customer.lastName,
+                                                        });setStore({storeId:e.target.value})}}
+                                                        />1
+                                <input type="radio" name="storeId" value={2} 
+                                                    onChange={(e)=>{setCustomer({
+                                                        firstName : customer.firstName, lastName : customer.lastName,
                                                         email:customer.email, active:customer.active, addressId:address.addressId,
                                                         customerId: customer.customerId
-                                                        })}/>2
+                                                        });setStore({storeId:e.target.value})}}/>2
                             </span>
                             :
                             <span>
-                                <input type="radio" name="storeId" value="1" 
-                                                    onChange={(e)=>setCustomer({
-                                                        storeId:e.target.value,firstName : customer.firstName, lastName : customer.lastName,
+                                <input type="radio" name="storeId" value={1} 
+                                                    onChange={(e)=>{setCustomer({
+                                                        firstName : customer.firstName, lastName : customer.lastName,
                                                         email:customer.email, active:customer.active, addressId:address.addressId,
                                                         customerId: customer.customerId
-                                                        })}/>1
-                                <input type="radio" name="storeId" value="2" checked 
-                                                    onChange={(e)=>setCustomer({
-                                                        storeId:e.target.value,firstName : customer.firstName, lastName : customer.lastName,
+                                                        });setStore({storeId:e.target.value})}}/>1
+                                <input type="radio" name="storeId" value={2} checked="checked"
+                                                    onChange={(e)=>{setCustomer({
+                                                        firstName : customer.firstName, lastName : customer.lastName,
                                                         email:customer.email, active:customer.active, addressId:address.addressId,
                                                         customerId: customer.customerId
-                                                        })}/>2
+                                                        });setStore({storeId:e.target.value})}}/>2
                             </span>
                         }
                         
                     </td>
                 </tr>
+                 */}
                 <tr>
                     <th>firstName</th>
                     <td><input type="text" value={customer.firstName} onChange={(e)=>setCustomer({
